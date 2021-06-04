@@ -1,7 +1,15 @@
-doctype html
-html(lang="ko")
-    head
-        title Wetube
-    body
-        h1 Welcome to Wetube
-    include partials/footer
+extends base.pug
+include mixins/video
+
+block content
+    h2 Welcome here you will see the trending videos!
+    each video in videos
+        +video(video)
+    else
+        li Sorry nothing found.
+
+//-   each potato in videos에서
+//-   videos는 반드시 비디오컨트롤러에서 정의한 이름과 같아야 함. potato는 아무 이름이나 가능..
+//- mixin 사용시에는 +표시를 해줌
+//- +video(potato)에서, video라는 믹신에 potato라는 데이터를 보내주고 있음
+//- (potato는 비디오컨트롤러에서 정의한 videos의 elements)

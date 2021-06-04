@@ -1,7 +1,8 @@
-doctype html
-html(lang="ko")
-    head
-        title Wetube
-    body
-        h1 Edit !!
-    include partials/footer
+extends base.pug
+
+block content
+    h4 Change Title of video
+    //- 데이터를 백엔드로 보내는 법(form입력창에 비디오 새제목 수정)
+    form(method="POST")
+        input(name="title", placeholder="Video Title", value=video.title, required)
+        input(value="Save",type="submit")

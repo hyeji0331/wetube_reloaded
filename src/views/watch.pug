@@ -1,7 +1,7 @@
-doctype html
-html(lang="ko")
-    head
-        title Wetube
-    body
-        h1 Welcome to Wetube
-    include partials/footer
+extends base.pug
+
+block content
+    h3 #{video.views} #{video.views===1 ? "view":"views"}
+    //- views가 1이라면(?) view라고 찍어주고 아니면(:) views라고 찍어주라
+    a(href=`${video.id}/edit`) Edit Video &rarr;
+    

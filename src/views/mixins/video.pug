@@ -1,0 +1,12 @@
+//- mixin 믹신의 이름(객체:받게 될 데이터)
+//- 믹신은 파셜과 비슷, 데이터를 받을 수 있는 파셜이라고 생각하면 됨(조회수, 코멘트 등)
+//- 믹신도 일종의 함수라고 볼 수 있음.. include 안 해주면 'video라는 함수가 정의되지 않았다'라는 에러메시지가 뜸.
+mixin video(video)
+    div
+        h4
+            a(href=`/videos/${video.id}`)=video.title
+        ul
+            li #{video.rating}/5.
+            li #{video.comments} Comments.
+            li Posted #{video.createdAt}.
+            li #{video.views} views.

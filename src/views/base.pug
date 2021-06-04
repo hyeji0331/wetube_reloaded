@@ -1,0 +1,19 @@
+//- 다른 pug 파일들에서 extends base.pug 작성해주면 적용 가능~!
+
+doctype html
+html(lang="ko")
+    head
+        title #{pageTitle} | Wetube
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+        //- mvp.css는 html에 기본스타일 넣어주는 아이..(css작업하기 전에 너무 보기 안 좋으니까)
+    body
+        header
+            h1=pageTitle
+            nav
+                ul
+                    li
+                        a(href="/videos/upload") Upload Video
+        main
+            block content
+    include partials/footer
+    
